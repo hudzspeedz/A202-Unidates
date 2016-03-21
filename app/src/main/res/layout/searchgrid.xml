@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="2dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:src="@drawable/unidates"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grid_item_corner"
+        >
+
+        <TextView
+            android:id="@+id/TVSGname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="50px"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/TVSGage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="age"
+            android:textSize="50px"
+            android:layout_below="@+id/TVSGname"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/TVSGuni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="university"
+            android:textSize="50px"
+            android:layout_below="@id/TVSGage"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</LinearLayout>
+

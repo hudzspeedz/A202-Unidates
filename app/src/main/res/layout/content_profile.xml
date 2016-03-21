@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ff69ff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.coventery.jack.unidatesapp.ProfileActivity"
+    tools:showIn="@layout/activity_profile">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/PIV1"
+        android:layout_below="@+id/Header"
+        android:layout_centerHorizontal="true"
+
+       />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/PIV2"
+        android:layout_below="@+id/PIV1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/PIV3"
+        android:layout_below="@+id/PIV2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="NAME"
+        android:textAlignment="center"
+        android:id="@+id/PTVname"
+        android:layout_below="@+id/PIV3"
+        android:layout_centerHorizontal="true"
+        android:textSize="90px"
+        android:background="@drawable/grid_item_corner"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="age"
+        android:textAlignment="center"
+        android:id="@+id/PTVage"
+        android:textSize="90px"
+        android:layout_below="@+id/PTVname"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grid_item_corner"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Uni"
+        android:textAlignment="center"
+        android:id="@+id/PTVuni"
+        android:textSize="90px"
+        android:layout_below="@+id/PTVage"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grid_item_corner"
+        android:textStyle="bold"
+        />
+
+
+</RelativeLayout>

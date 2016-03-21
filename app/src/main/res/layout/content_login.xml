@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    tools:showIn="@layout/activity_login"
+    android:background="#ff69ff"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username"
+        android:id="@+id/TVUsername"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="350px"
+        android:id="@+id/IVLogo"
+        android:src="@drawable/unidates"
+        android:layout_above="@+id/TVUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ETUsername"
+        android:layout_below="@+id/TVUsername"
+        android:layout_alignRight="@+id/TVUsername"
+        android:layout_alignEnd="@+id/TVUsername"
+        android:layout_alignLeft="@+id/TVUsername"
+        android:layout_alignStart="@+id/TVUsername" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/TVPassword"
+        android:layout_below="@+id/ETUsername"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/ETPassword"
+        android:layout_below="@+id/TVPassword"
+        android:layout_alignRight="@+id/TVPassword"
+        android:layout_alignEnd="@+id/TVPassword"
+        android:layout_alignLeft="@+id/ETUsername"
+        android:layout_alignStart="@+id/ETUsername" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:id="@+id/BLogin"
+        android:layout_below="@+id/ETPassword"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:id="@+id/BSignup"
+        android:layout_below="@+id/BLogin"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

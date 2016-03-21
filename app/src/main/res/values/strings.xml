@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">UniDatesApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_search">SearchActivity</string>
+
+    <string-array name="Users">
+        <item>Jack</item>
+        <item>Sean</item>
+        <item>frank</item>
+        <item>dilo</item>
+        <item>oloe</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="Passes">
+        <item>Jacks</item>
+        <item>Seans</item>
+        <item>franks</item>
+        <item>dilos</item>
+        <item>oloes</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="firstname">
+        <item>Lexy</item>
+        <item>Anne</item>
+        <item>Siana</item>
+        <item>Laqueta</item>
+        <item>Olivia</item>
+        <item>Ramona</item>
+        <item>Dalia</item>
+        <item>Emily</item>
+        <item>sano</item>
+        <item>Horito</item>
+        <item>samantha</item>
+        <item>reana</item>
+        <item>lisa</item>
+        <item>sammy</item>
+        <item>belle</item>
+    </string-array>
+
+    <string-array name="lastname">
+        <item>Lexy</item>
+        <item>Anne</item>
+        <item>Siana</item>
+        <item>Laqueta</item>
+        <item>Olivia</item>
+        <item>Ramona</item>
+        <item>Dalia</item>
+        <item>Emily</item>
+        <item>sano</item>
+        <item>Horito</item>
+        <item>samantha</item>
+        <item>reana</item>
+        <item>lisa</item>
+        <item>sammy</item>
+        <item>belle</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>19</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>15</item>
+        <item>16</item>
+        <item>27</item>
+        <item>38</item>
+        <item>29</item>
+        <item>20</item>
+        <item>23</item>
+        <item>19</item>
+        <item>26</item>
+        <item>25</item>
+        <item>32</item>
+    </string-array>
+
+    <string-array name="uni">
+        <item>cov</item>
+        <item>cov</item>
+        <item>lester</item>
+        <item>hud</item>
+        <item>brad</item>
+        <item>lero</item>
+        <item>sevante</item>
+        <item>hull</item>
+        <item>barcalona</item>
+        <item>paris</item>
+        <item>cov</item>
+        <item>london</item>
+        <item>hud</item>
+        <item>leister</item>
+        <item>warwick</item>
+    </string-array>
+
+    <string-array name="urlimage">
+        <item>http://www.hotgirlselfies.com/wp-content/gallery/blondes-01/hotgirlselfies5433545438735354.jpg</item>
+        <item>https://aldostrada.files.wordpress.com/2012/03/4ec99312b56301.jpg</item>
+        <item>https://sasportsblog.files.wordpress.com/2015/03/11024436_1532505273677904_285894275_n.jpg</item>
+        <item>https://s-media-cache-ak0.pinimg.com/736x/28/63/01/2863014f094b8d83034c1f46234a6888.jpg</item>
+        <item>http://4.bp.blogspot.com/-IO0rZAwidIw/UXgunx6nLVI/AAAAAAAADdI/3JTDhZHna0s/s1600/.jpg</item>
+        <item>http://1.bp.blogspot.com/-KuFrhzsc2TE/U-STcx4dZGI/AAAAAAAAKWQ/rngsW25GXwk/s1600/Hot+Selfie+Ideas+and+Photo+(7).jpg</item>
+        <item>http://img.thesun.co.uk/aidemitlum/archive/02004/Untitled-1_2004892a.jpg</item>
+        <item>https://pbs.twimg.com/media/B8VlPkTCYAERw8q.jpg</item>
+        <item>http://imgfave-herokuapp-com.global.ssl.fastly.net/image_cache/1427710291198906.jpg</item>
+        <item>http://hotpenguin.net/wp-content/uploads/2014/06/RoyReid.ca-Breakfast-Beauty-Selfie-10.jpg</item>
+        <item>http://fullofyourselfies.com/wp-content/uploads/2014/11/Hot-Chick-9.jpg</item>
+        <item>http://im1.peldata.com/bl15/142348/30th.jpg</item>
+        <item>http://im1.peldata.com/bl15/142348/24th.jpg</item>
+        <item>http://i0.wp.com/res.cloudinary.com/cdnthehardfloor8/image/upload/v1446512490/these-selfies-almost-make-me-forget-its-monday-27_hmsogm.jpg</item>
+        <item>http://img.izismile.com/img/img7/20141024/640/sexy_selfies_are_the_reason_we_love_instagram_640_10.jpg</item>
+
+    </string-array>
+
+    <string-array name="testimg">
+
+        <item>http://www.sciencekids.co.nz/images/pictures/math/number1.jpg</item>
+        <item>http://atlasmetalfab.com/main/wp-content/uploads/2015/12/2.png</item>
+        <item>http://cliparwolf.com/images/3/3-10.jpg</item>
+        <item>http://cliparwolf.com/images/4/4-06.jpg</item>
+        <item>http://cliparwolf.com/images/5/5-08.jpg</item>
+        <item>http://cliparwolf.com/images/6/6-08.jpg</item>
+        <item>http://cliparwolf.com/images/7/7-08.jpg</item>
+        <item>http://cliparwolf.com/images/8/8-08.jpg</item>
+        <item>http://cliparwolf.com/images/9/9-08.jpg</item>
+        <item>http://cliparwolf.com/images/10/10-08.jpg</item>
+        <item>http://www.reenagagneja.com/wp-content/uploads/2014/08/11.jpg</item>
+        <item>http://bsccongress.com/wp-content/uploads/2015/11/red-rounded-with-number-12-clip-art.png</item>
+        <item>http://3.bp.blogspot.com/-fYuu7M10eDk/Th5A-tx44DI/AAAAAAAAALI/qbOB8NV_Bak/s1600/Number13.png</item>
+        <item>http://www.livingggood.com/wp-content/uploads/2012/08/14.jpg</item>
+        <item>http://2.bp.blogspot.com/_kOKaK_MVjRA/TNXSkXFP3cI/AAAAAAAAAtk/lmrq5aC230s/s1600/15.png</item>
+    </string-array>
+
+
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_toolbar">ToolbarActivity</string>
+</resources>
