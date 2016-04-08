@@ -3,11 +3,15 @@ package com.coventery.jack.unidatesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.coventery.jack.unidatesapp.app.DatabaseHandler;
+import com.coventery.jack.unidatesapp.app.Users;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,6 +28,12 @@ public class LoginActivity extends AppCompatActivity {
 
         final String u = "jack";
         final String p = "jackspass";
+
+        DatabaseHandler db = new DatabaseHandler(this);
+        Log.d("Insert","Inserting ...");
+        db.addUser(new Users("sexygfo", "pass1", "salene", "gomez", 1, "coventry", "img1", "img2", "img3"));
+        Log.d("inserted","inserted");
+
 
         Button LoginButon = (Button) findViewById(R.id.BLogin);
         LoginButon.setOnClickListener(new View.OnClickListener() {

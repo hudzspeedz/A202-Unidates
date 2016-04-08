@@ -10,6 +10,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "Alpha - 1.0.3.3"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -25,5 +26,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
-    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.android.gms:play-services-auth:8.4.0'
+
 }

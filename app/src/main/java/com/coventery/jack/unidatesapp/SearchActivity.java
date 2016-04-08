@@ -27,16 +27,6 @@ public class SearchActivity extends AppCompatActivity {
     private GridView gridView;
     private GridViewAdapter gridAdapter;
 
-    private int[] hardimage = {R.drawable.sample_1,
-    R.drawable.sample_1, R.drawable.sample_2,
-    R.drawable.sample_3,
-    R.drawable.sample_4,
-    R.drawable.sample_5,
-    R.drawable.sample_6,
-    R.drawable.sample_7,
-    R.drawable.sample_1,
-    R.drawable.sample_2 };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +35,7 @@ public class SearchActivity extends AppCompatActivity {
         Fnames = getResources().getStringArray(R.array.firstname);
         Age = getResources().getStringArray(R.array.age);
         Uni= getResources().getStringArray(R.array.uni);
-        Urls = getResources().getStringArray(R.array.testimg);
+        Urls = getResources().getStringArray(R.array.urlimage);
 
 
         Log.d("befor array", "Los arayos");
