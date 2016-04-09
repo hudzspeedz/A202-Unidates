@@ -74,33 +74,44 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public List<Users> getAllUsers(){
-        List<Users> usersList = new ArrayList<Users>();
-        String selectQuery = "SELECT * FROM" + TABLE_CONTENTS;
+    public ArrayList<Users> getAllUsers(){
+        ArrayList<Users> users = new ArrayList<Users>();
+        String selectQuery = "SELECT  * FROM " + TABLE_CONTENTS;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery ,null);
 
         if (cursor.moveToFirst()){
             do{
-                Users users = new Users();
-                users.set_id(Integer.parseInt(cursor.getString(0)));
-                users.set_Username(cursor.getString(1));
-                users.set_Password(cursor.getString(2));
-                users.set_Firstname(cursor.getString(3));
-                users.set_Surname(cursor.getString(4));
-                users.set_Age(Integer.parseInt(cursor.getString(5)));
-                users.set_University(cursor.getString(6));
-                users.set_Url1(cursor.getString(7));
-                users.set_Url2(cursor.getString(8));
-                users.set_Url3(cursor.getString(9));
+                Users user = new Users();
+                user.set_id(Integer.parseInt(cursor.getString(0)));
+                user.set_Username(cursor.getString(1));
+                user.set_Password(cursor.getString(2));
+                user.set_Firstname(cursor.getString(3));
+                user.set_Surname(cursor.getString(4));
+                user.set_Age(Integer.parseInt(cursor.getString(5)));
+                user.set_University(cursor.getString(6));
+                user.set_Url1(cursor.getString(7));
+                user.set_Url2(cursor.getString(8));
+                user.set_Url3(cursor.getString(9));
 
-                usersList.add(users);
+                users.add(user);
             }while (cursor.moveToNext());
+            cursor.close();
+            db.close();
         }
-        return usersList;
+        return users;
     }
 
+    // Getting contacts Count
+    public int getUserCount() {
+        String countQuery = "SELECT  * FROM " + TABLE_CONTENTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
 
+        // return count
+        return cursor.getCount();
+    }
 
 }

@@ -38,7 +38,6 @@ public class GridViewAdapter extends BaseAdapter {
 
         this.layoutResourceId = layoutResourceId;
         this.context = context;
-        this.context = context;
         this.Fnames = Fnames;
         this.Ages = Ages;
         this.Unis = Unis;
@@ -48,7 +47,7 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return Fnames.length;
+        return Ages.length;
     }
 
     @Override

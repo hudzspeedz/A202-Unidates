@@ -10,8 +10,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.coventery.jack.unidatesapp.app.DataPrefill;
 import com.coventery.jack.unidatesapp.app.DatabaseHandler;
 import com.coventery.jack.unidatesapp.app.Users;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -30,12 +33,26 @@ public class LoginActivity extends AppCompatActivity {
         final String p = "jackspass";
 
         DatabaseHandler db = new DatabaseHandler(this);
-        Log.d("Insert","Inserting ...");
-        db.addUser(new Users("sexygfo", "pass1", "salene", "gomez", 1, "coventry", "img1", "img2", "img3"));
-        Log.d("inserted","inserted");
+        DataPrefill fill = new DataPrefill();
+
+        Log.d("Insert", "Inserting ...");
+        fill.Dataprefill(db);
+        Log.d("inserted", "inserted");
+
+        db.close();
+
+        // Reading all contacts
+        Log.d("Reading: ", "Reading all contacts..");
+        List<Users> users = db.getAllUsers();
+
+        for (Users cn : users) {
+            String log = "Id: "+cn.get_id()+" ,fName: " + cn.get_Firstname() + " ,lname: " + cn.get_Surname();
+            // Writing Contacts to log
+            Log.d("Name: ", log);
+        }
 
 
-        Button LoginButon = (Button) findViewById(R.id.BLogin);
+            Button LoginButon = (Button) findViewById(R.id.BLogin);
         LoginButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
