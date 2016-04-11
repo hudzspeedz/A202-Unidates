@@ -47,7 +47,7 @@ public class GridViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return Ages.length;
+        return 11;
     }
 
     @Override

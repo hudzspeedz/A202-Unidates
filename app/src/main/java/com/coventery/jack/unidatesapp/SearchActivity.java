@@ -22,7 +22,12 @@ public class SearchActivity extends AppCompatActivity {
     String Uni[];
     String Urls[];
     String DBFN[] = new String[20];
+    String DBLN[] = new String[20];
+    int DBage[] = new int[20];
+    String DBUni[] = new String[20];
     String DBurl[] = new String[20];
+    String DBurl2[] = new String[20];
+    String DBurl3[] = new String[20];
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
@@ -53,16 +58,21 @@ public class SearchActivity extends AppCompatActivity {
             // Writing Contacts to log
             Log.d("Name: ", log);
         }
-        for(int i = 0; i < 9 ;i ++)
+        for(int i = 0; i < 11 ;i ++)
         {
             DBFN[i] = users.get(i).get_Firstname();
+            DBLN[i]= users.get(i).get_Surname();
+            DBage[i]= users.get(i).get_Age();
+            DBUni[i] = users.get(i).get_University();
             DBurl[i] = users.get(i).get_Url1();
+            DBurl2[i] = users.get(i).get_Url2();
+            DBurl3[i] = users.get(i).get_Url3();
         }
 
         Log.d("befor array", "Los arayos");
 
         gridView = (GridView) findViewById(R.id.GVScontent);
-        gridAdapter = new GridViewAdapter(SearchActivity.this,R.layout.searchgrid,DBFN,Age,Uni,DBurl);
+        gridAdapter = new GridViewAdapter(SearchActivity.this,R.layout.searchgrid,DBFN,Age,DBUni,DBurl);
         gridView.setAdapter(gridAdapter);
 
 
@@ -73,10 +83,12 @@ public class SearchActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SearchActivity.this, ProfileActivity.class);
                 intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("Image1", Urls[position]);
-                intent.putExtra("Name", Fnames[position]);
+                intent.putExtra("Image1", DBurl[position]);
+                intent.putExtra("Image2", DBurl2[position]);
+                intent.putExtra("Image3", DBurl3[position]);
+                intent.putExtra("Name", DBFN[position]);
                 intent.putExtra("Age", Age[position]);
-                intent.putExtra("Uni", Uni[position]);
+                intent.putExtra("Uni", DBUni[position]);
                 startActivity(intent);
 
             }

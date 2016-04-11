@@ -48,6 +48,14 @@ public class DataPrefill {
                 "https://pbs.twimg.com/profile_images/509383180554498048/fsY0kq5u.jpeg",
                 "http://farm8.staticflickr.com/7343/13316855743_26fab0b519_o.jpg",
                 "http://i.imgur.com/mZJdbQu.jpg"));
+        db.addUser(new Users("user10", "pass10", "eva", "longera", 27, "california",
+                "http://wegotthiscovered.com/wp-content/uploads/eva-longoria.jpg",
+                "http://i.forbesimg.com/media/lists/people/eva-longoria_416x416.jpg",
+                "http://speakerdata.s3.amazonaws.com/photo/image/866644/eva-longoria__140212193922.jpg"));
+        db.addUser(new Users("use11", "pass11", "keely", "hazell", 26, "california",
+                "http://realitybox.co.uk/wp-content/uploads/2015/07/Keeley_Hazell_850_Wallpaper.jpg",
+                "http://i216.photobucket.com/albums/cc178/verturdan/Keeley%20Hazell/KeeleyHazell3.jpg",
+                "http://wickedchopspoker.com/wp-content/uploads/2013/12/Keeley-Hazell-5.jpg"));
 
 
         Log.d("inserted", "inserted");

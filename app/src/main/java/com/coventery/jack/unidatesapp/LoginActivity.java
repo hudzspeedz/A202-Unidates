@@ -18,26 +18,19 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String[] Users;
-    String[] Passes;
-    String ActiveUser;
-    String ActivePassword;
-    int PassNID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final String u = "jack";
-        final String p = "jackspass";
-
         DatabaseHandler db = new DatabaseHandler(this);
         DataPrefill fill = new DataPrefill();
 
-        Log.d("Insert", "Inserting ...");
-        fill.Dataprefill(db);
-        Log.d("inserted", "inserted");
+        if (db.getUserCount() == 0){
+            Log.d("Insert", "Inserting ...");
+            fill.Dataprefill(db);
+            Log.d("inserted", "inserted");
+        }
 
         db.close();
 
@@ -57,20 +50,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ActiveUser = "";
-
                 Intent Launch = new Intent(LoginActivity.this, SearchActivity.class);
                 Launch.setFlags(Launch.FLAG_ACTIVITY_CLEAR_TOP);
 
-                EditText password = (EditText) findViewById(R.id.ETPassword);
-                final String Password = password.getText().toString();
-
-                if( checkUsername()) {
-
-                    if (checkPassword(Password)) {
-                        startActivity(Launch);
-                        finish();
-                    }
+                if (DBLOGIN()) {
+                    startActivity(Launch);
+                    finish();
                 }
             }
         });
@@ -100,50 +85,26 @@ public class LoginActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    Boolean checkUsername(){
+
+    boolean DBLOGIN(){
+        DatabaseHandler db = new DatabaseHandler(this);
+        List<Users> users = db.getAllUsers();
 
         EditText username = (EditText) findViewById(R.id.ETUsername);
         final String Username = username.getText().toString();
+        EditText password = (EditText) findViewById(R.id.ETPassword);
+        final String Password = password.getText().toString();
 
-        Users = getResources().getStringArray(R.array.Users);
+        for (int i = 0; i < db.getUserCount(); i++) {
+            if (Username.equals(users.get(i).get_Username())){
+                if (Password.equals(users.get(i).get_Password())){
+                    return (true);
 
-        for(int i = 0; i < Users.length; i++)
-        {
-            if(Username.equals(Users[i])) {
-                ActiveUser = Users[i];
-                PassNID = i;
-                // Toast.makeText(getApplicationContext(), "username Found", Toast.LENGTH_SHORT).show();
-                return (true);
+                }
             }
-        }
 
-        if(ActiveUser.equals(""))
-        {
-            //Toast.makeText(getApplicationContext(), "No User Found", Toast.LENGTH_SHORT).show();
-            return(false);
         }
         return (false);
-    }
-
-    boolean checkPassword(String password){
-
-        Passes = getResources().getStringArray(R.array.Passes);
-
-        ActivePassword = Passes[PassNID];
-
-        if(password.equals(ActivePassword))
-        {
-            //Toast.makeText(getApplicationContext(), "Correct password", Toast.LENGTH_SHORT).show();
-            return(true);
-        }
-        else
-        {
-            //Toast.makeText(getApplicationContext(), "Incorrect password", Toast.LENGTH_SHORT).show();
-            return(false);
-        }
-
-
-
     }
 
 }

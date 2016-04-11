@@ -3,6 +3,7 @@ package com.coventery.jack.unidatesapp.app;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -104,14 +105,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Getting contacts Count
-    public int getUserCount() {
+    public long getUserCount() {
         String countQuery = "SELECT  * FROM " + TABLE_CONTENTS;
         SQLiteDatabase db = this.getReadableDatabase();
+        long count = DatabaseUtils.queryNumEntries(db,TABLE_CONTENTS);
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
 
         // return count
-        return cursor.getCount();
+        return count;
     }
 
 }

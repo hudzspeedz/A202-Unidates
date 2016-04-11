@@ -84,5 +84,26 @@
         android:textStyle="bold"
         />
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/PTVuni"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_weight="0.5"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton2"
+            android:layout_weight="0.5"/>
+    </TableRow>
+
 
 </RelativeLayout>

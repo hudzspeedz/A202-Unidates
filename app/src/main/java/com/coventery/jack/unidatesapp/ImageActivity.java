@@ -19,7 +19,7 @@ public class ImageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String Image = intent.getStringExtra("Image");
         ImageView fsimg = (ImageView) findViewById(R.id.IVFSI);
-        fsimg.setScaleType(ImageView.ScaleType.CENTER);
+        fsimg.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         new GetXMLTask(fsimg).execute(Image);
 
     }
