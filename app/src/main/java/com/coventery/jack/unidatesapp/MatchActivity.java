@@ -107,7 +107,7 @@ public class MatchActivity extends AppCompatActivity {
         Button myprofileb = (Button) findViewById(R.id.button3);
         myprofileb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MatchActivity.this,ProfileActivity.class);
+                Intent intent = new Intent(MatchActivity.this, ProfileActivity.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("Name", users.get(ActiveUser).get_Firstname());
@@ -120,7 +120,15 @@ public class MatchActivity extends AppCompatActivity {
             }
         });
 
-
+        Button Search = (Button) findViewById(R.id.button2);
+        Search.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MatchActivity.this, SearchActivity.class);
+                intent.putExtra("ActiveUser", ActiveUser);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
     }
 
 
