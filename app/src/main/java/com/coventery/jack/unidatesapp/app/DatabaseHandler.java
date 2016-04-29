@@ -42,9 +42,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         Log.d("starting table"," createing table");
-        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_CONTENTS + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_USERNAME + " TEXT," +
-                KEY_PASSWORD + " TEXT," + KEY_FIRSTNAME + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AGE  + " TEXT," + KEY_UNIVERSITY + " TEXT,"+
-                KEY_URL1 + " TEXT," + KEY_URL2 + " TEXT," + KEY_URL3 + " TEXT" + ")";
+        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_CONTENTS + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_USERNAME
+                + " TEXT," + KEY_PASSWORD + " TEXT," + KEY_FIRSTNAME + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AGE
+                + " TEXT," + KEY_UNIVERSITY + " TEXT,"+ KEY_URL1 + " TEXT," + KEY_URL2 + " TEXT," + KEY_URL3 + " TEXT" + ")";
         db.execSQL(CREATE_USERS_TABLE);
         Log.d("ending table", " finished table");
     }
@@ -90,7 +90,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 user.set_Password(cursor.getString(2));
                 user.set_Firstname(cursor.getString(3));
                 user.set_Surname(cursor.getString(4));
-                user.set_Age(Integer.parseInt(cursor.getString(5)));
+                user.set_Age(cursor.getString(5));
                 user.set_University(cursor.getString(6));
                 user.set_Url1(cursor.getString(7));
                 user.set_Url2(cursor.getString(8));

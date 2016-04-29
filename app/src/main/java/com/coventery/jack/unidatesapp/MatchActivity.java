@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,12 +15,15 @@ import android.widget.Button;
 import android.widget.GridView;
 
 import com.coventery.jack.unidatesapp.app.DatabaseHandler;
+import com.coventery.jack.unidatesapp.app.MatchHandler;
+import com.coventery.jack.unidatesapp.app.Matches;
 import com.coventery.jack.unidatesapp.app.Users;
 
 import java.util.ArrayList;
 
 
-public class SearchActivity extends AppCompatActivity {
+
+public class MatchActivity extends AppCompatActivity {
 
     String DBFN[] = new String[20];
     String DBLN[] = new String[20];
@@ -30,22 +36,26 @@ public class SearchActivity extends AppCompatActivity {
     public static final String MyPREFERENCES = "Active-User" ;
 
     private GridView gridView;
-    private GridViewAdapter gridAdapter;
+    private MatchViewAdapter matchAddapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_match);
 
         SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         this.ActiveUser = sharedpreferences.getInt("UserLoged", -1 );
-        Log.d("Active user in serch", Integer.toString(sharedpreferences.getInt("UserLoged", -1 )));
+        Log.d("Active user in serch", Integer.toString(sharedpreferences.getInt("UserLoged", -1)));
 
 
 
         Log.d("getting database handl", "");
-        DatabaseHandler db = new DatabaseHandler(this);
-        final ArrayList<Users> users = db.getAllUsers();
+        DatabaseHandler databaseHandler = new DatabaseHandler(this);
+        final ArrayList<Users> users = databaseHandler.getAllUsers();
+
+        MatchHandler mh = new MatchHandler(this,users.get(ActiveUser).get_Firstname() + users.get(ActiveUser).get_Surname());
+        final ArrayList<Matches> matches = mh.getAllUsers();
 
 
         Log.d("getting database names", "");
@@ -57,28 +67,28 @@ public class SearchActivity extends AppCompatActivity {
             // Writing Contacts to log
             Log.d("Name: ", log);
         }
-        for(int i = 0; i < db.getUserCount();i ++)
+        for(int i = 0; i < mh.getUserCount();i ++)
         {
-            DBFN[i] = users.get(i).get_Firstname();
-            DBLN[i]= users.get(i).get_Surname();
-            DBage[i]= users.get(i).get_Age();
-            DBUni[i] = users.get(i).get_University();
-            DBurl[i] = users.get(i).get_Url1();
-            DBurl2[i] = users.get(i).get_Url2();
-            DBurl3[i] = users.get(i).get_Url3();
+            DBFN[i] = matches.get(i).get_Firstname();
+            DBLN[i]= matches.get(i).get_Surname();
+            DBage[i]= matches.get(i).get_Age();
+            DBUni[i] = matches.get(i).get_University();
+            DBurl[i] = matches.get(i).get_Url1();
+            DBurl2[i] = matches.get(i).get_Url2();
+            DBurl3[i] = matches.get(i).get_Url3();
         }
 
         Log.d("befor array", "Los arayos");
 
-        gridView = (GridView) findViewById(R.id.GVScontent);
-        gridAdapter = new GridViewAdapter(SearchActivity.this,R.layout.searchgrid,DBFN,DBage,DBUni,DBurl,db);
-        gridView.setAdapter(gridAdapter);
+        gridView = (GridView) findViewById(R.id.MatchView);
+        matchAddapter = new MatchViewAdapter(MatchActivity.this,R.layout.matchgrid,DBFN,DBage,DBUni,DBurl,mh);
+        gridView.setAdapter(matchAddapter);
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-                Intent intent = new Intent(SearchActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(MatchActivity.this, ProfileActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("Image1", DBurl[position]);
                 intent.putExtra("Image2", DBurl2[position]);
@@ -94,10 +104,10 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
-      Button myprofileb = (Button) findViewById(R.id.button3);
+        Button myprofileb = (Button) findViewById(R.id.button3);
         myprofileb.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(MatchActivity.this,ProfileActivity.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("Name", users.get(ActiveUser).get_Firstname());
@@ -110,20 +120,16 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        Button matchbut = (Button) findViewById(R.id.button);
-        matchbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this,MatchActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        }
-
-
-
 
     }
+
+
+
+
+
+
+
+
+}
 
 

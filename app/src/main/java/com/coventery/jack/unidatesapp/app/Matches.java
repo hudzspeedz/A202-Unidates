@@ -1,9 +1,9 @@
 package com.coventery.jack.unidatesapp.app;
 
 /**
- * Created by user on 07/04/2016.
+ * Created by user on 14/04/2016.
  */
-public class Users {
+public class Matches {
     // private variables
     int _id;
     String _Username;
@@ -16,20 +16,14 @@ public class Users {
     String _Url2;
     String _Url3;
 
-    public Users(){
+    public Matches(){
 
     }
-    public Users(String username, String password){
-        this._Username = username;
-        this._Password = password;
-    }
 
 
-    public Users(int id,String username,String password,
+    public Matches(int id,
                  String firstname, String surname, String age, String university, String url1, String url2,String url3){
         this._id = id;
-        this._Username = username;
-        this._Password = password;
         this._Firstname = firstname;
         this._Surname = surname;
         this._Age = age;
@@ -40,10 +34,8 @@ public class Users {
     }
 
 
-    public Users(String username,String password,
+    public Matches(
                  String firstname, String surname, String age, String university, String url1, String url2,String url3){
-        this._Username = username;
-        this._Password = password;
         this._Firstname = firstname;
         this._Surname = surname;
         this._Age = age;
@@ -90,9 +82,7 @@ public class Users {
         return this._Surname;
     }
 
-    public void set_Surname(String _Surname) {
-        this._Surname = _Surname;
-    }
+    public void set_Surname(String _Surname) { this._Surname = _Surname; }
 
     public String get_Age() {
         return this._Age;

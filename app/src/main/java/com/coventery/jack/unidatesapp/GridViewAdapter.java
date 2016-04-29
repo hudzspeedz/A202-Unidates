@@ -15,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.coventery.jack.unidatesapp.app.DatabaseHandler;
+import com.coventery.jack.unidatesapp.app.Users;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -33,8 +36,11 @@ public class GridViewAdapter extends BaseAdapter {
     private final String[] Urls;
     private Context context;
     private int layoutResourceId;
+    DatabaseHandler db;
 
-    public GridViewAdapter(Context context, int layoutResourceId, String[] Fnames, String[] Ages, String[] Unis, String[] Urls) {
+
+
+    public GridViewAdapter(Context context, int layoutResourceId, String[] Fnames, String[] Ages, String[] Unis, String[] Urls,DatabaseHandler db) {
 
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -42,12 +48,18 @@ public class GridViewAdapter extends BaseAdapter {
         this.Ages = Ages;
         this.Unis = Unis;
         this.Urls = Urls;
+        this.db = db;
+
 
     }
 
     @Override
     public int getCount() {
-        return 11;
+
+        long allusers = db.getUserCount();
+        int intallusers = (int)allusers;
+
+         return intallusers ;
     }
 
     @Override

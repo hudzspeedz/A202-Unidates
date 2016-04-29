@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,144 +12,217 @@
     tools:context="com.coventery.jack.unidatesapp.SignupActivity"
     tools:showIn="@layout/activity_signup">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:id="@+id/TVSUUsername"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ETSUUsername"
-        android:layout_below="@+id/TVSUUsername"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
-        android:id="@+id/TVSUPassword"
-        android:layout_below="@+id/ETSUUsername"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Username"
+    android:id="@+id/TVSUUsername"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/ETSUPassword"
-        android:layout_below="@+id/TVSUPassword"
-        android:layout_alignLeft="@+id/ETSUUsername"
-        android:layout_alignStart="@+id/ETSUUsername"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ETSUUsername"
+    android:layout_below="@+id/TVSUUsername"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="First Name"
-        android:id="@+id/TVSUFirstname"
-        android:layout_below="@+id/ETSUPassword"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Password"
+    android:id="@+id/TVSUPassword"
+    android:layout_below="@+id/ETSUUsername"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/ETSUFirstname"
-        android:layout_below="@+id/TVSUFirstname"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPassword"
+    android:ems="10"
+    android:id="@+id/ETSUPassword"
+    android:layout_below="@+id/TVSUPassword"
+    android:layout_alignLeft="@+id/ETSUUsername"
+    android:layout_alignStart="@+id/ETSUUsername"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Last Name"
-        android:id="@+id/TVSULastname"
-        android:layout_below="@+id/ETSUFirstname"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="First Name"
+    android:id="@+id/TVSUFirstname"
+    android:layout_below="@+id/ETSUPassword"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/ETSULastname"
-        android:layout_below="@+id/TVSULastname"
-        android:layout_alignRight="@+id/ETSUFirstname"
-        android:layout_alignEnd="@+id/ETSUFirstname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:ems="10"
+    android:id="@+id/ETSUFirstname"
+    android:layout_below="@+id/TVSUFirstname"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Age"
-        android:id="@+id/TVSUAge"
-        android:layout_below="@+id/ETSULastname"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Last Name"
+    android:id="@+id/TVSULastname"
+    android:layout_below="@+id/ETSUFirstname"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/ETSUAge"
-        android:layout_below="@+id/TVSUAge"
-        android:layout_alignRight="@+id/ETSUFirstname"
-        android:layout_alignEnd="@+id/ETSUFirstname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:ems="10"
+    android:id="@+id/ETSULastname"
+    android:layout_below="@+id/TVSULastname"
+    android:layout_alignRight="@+id/ETSUFirstname"
+    android:layout_alignEnd="@+id/ETSUFirstname"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="University"
-        android:id="@+id/TVSUUniversity"
-        android:layout_below="@+id/ETSUAge"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Age"
+    android:id="@+id/TVSUAge"
+    android:layout_below="@+id/ETSULastname"
+    android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/TVSUUniversity"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="number"
+    android:ems="10"
+    android:id="@+id/ETSUAge"
+    android:layout_below="@+id/TVSUAge"
+    android:layout_alignRight="@+id/ETSUFirstname"
+    android:layout_alignEnd="@+id/ETSUFirstname"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/BSUSignup"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="University"
+    android:id="@+id/TVSUUniversity"
+    android:layout_below="@+id/ETSUAge"
+    android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To login"
-        android:id="@+id/back"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ETSUUNI"
+    android:layout_below="@+id/TVSUUniversity"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Image 1"
+    android:id="@+id/TVSUImage1"
+    android:layout_below="@+id/ETSUUNI"
+    android:layout_centerHorizontal="true" />
+
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:id="@+id/ETSUImg1"
+    android:layout_below="@+id/TVSUImage1"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Image 2"
+            android:id="@+id/TVSUImage2"
+            android:layout_below="@+id/ETSUImg1"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/ETSUImg2"
+            android:layout_below="@+id/TVSUImage2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Image 3"
+            android:id="@+id/TVSUImage3"
+            android:layout_below="@+id/ETSUImg2"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/ETSUImg3"
+            android:layout_below="@+id/TVSUImage3"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
 
 
-</RelativeLayout>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ETSUImg3"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Signup"
+                android:id="@+id/BEnterDetails" />
+
+            <Button
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:id="@+id/Btologin" />
+
+
+        </TableRow>
+    </RelativeLayout>
+</ScrollView>

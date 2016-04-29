@@ -1,6 +1,8 @@
 package com.coventery.jack.unidatesapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,11 +20,15 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
+    int ActiveUser;
+    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "Active-User" ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        final SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         DatabaseHandler db = new DatabaseHandler(this);
         DataPrefill fill = new DataPrefill();
 
@@ -51,12 +57,31 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent Launch = new Intent(LoginActivity.this, SearchActivity.class);
-                Launch.setFlags(Launch.FLAG_ACTIVITY_CLEAR_TOP);
+                Launch.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
 
                 if (DBLOGIN()) {
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.clear();
+                    editor.putInt("UserLoged", ActiveUser);
+                    editor.apply();
+                    Log.d("Active user in log", Integer.toString(sharedpreferences.getInt("UserLoged",-1)));
                     startActivity(Launch);
                     finish();
                 }
+            }
+        });
+
+        Button SignupBut = (Button) findViewById(R.id.BSignup);
+        SignupBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Signup = new Intent(LoginActivity.this,SignupActivity.class);
+
+                Signup.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(Signup);
+                finish();
+
             }
         });
 
@@ -90,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         List<Users> users = db.getAllUsers();
 
+
         EditText username = (EditText) findViewById(R.id.ETUsername);
         final String Username = username.getText().toString();
         EditText password = (EditText) findViewById(R.id.ETPassword);
@@ -98,6 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         for (int i = 0; i < db.getUserCount(); i++) {
             if (Username.equals(users.get(i).get_Username())){
                 if (Password.equals(users.get(i).get_Password())){
+                    this.ActiveUser = i;
                     return (true);
 
                 }
@@ -106,5 +133,4 @@ public class LoginActivity extends AppCompatActivity {
         }
         return (false);
     }
-
 }
